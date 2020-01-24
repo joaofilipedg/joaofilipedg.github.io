@@ -1,4 +1,12 @@
+---
+# layout: page
+title: João Guerreiro Website
+# tagline: Easy websites with GitHub Pages
+description: Personal Website of João Guerreiro
 theme: jekyll-theme-minimal
+logo: _figures/logo.jpg
+---
+
 
 social_media:
   linkedin: joaofdguerreiro
