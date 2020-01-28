@@ -25,5 +25,5 @@ Parallel Computing,  Volume 83, pp. 93-117, April 2019.
 International Workshop on Algorithms, Models and Tools for Parallel Computing on Heterogeneous Platforms (HeteroPar'2016), Grenoble, France, August 2016. 
 
 * João Guerreiro, Aleksandar Ilic, Nuno Roma, Pedro Tomás.  
- [Multi-kernel Auto-Tuning on GPUs: Performance and Energy-Aware Optimization.](https://ieeexplore.ieee.org/abstract/document/7092758/1)  
+ [Multi-kernel Auto-Tuning on GPUs: Performance and Energy-Aware Optimization.](https://ieeexplore.ieee.org/abstract/document/7092758)  
  Euromicro International Conference on Parallel, Distributed, and Network-Based Processing (PDP'2015), Turku, Finland, March 2015. 
