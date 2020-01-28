@@ -210,6 +210,12 @@ img {
   }
 }
 
+.site-footer-copyrights {
+  margin: 0;
+  font-size: 60%;
+  text-align: left;
+}
+
 nav {
   float: right;
   margin-top: 23px; // @TODO: Vertically middle align
@@ -279,7 +285,7 @@ nav {
 }
 
 footer {
-  padding: 20px 0;
+  padding: 20px 0 5px 0;
   text-align: center;
 }
 
