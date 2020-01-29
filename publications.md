@@ -22,8 +22,8 @@ Parallel Computing,  Volume 83, pp. 93-117, April 2019.
 
 * João Guerreiro, Aleksandar Ilic, Nuno Roma, Pedro Tomás.  
 [Performance and Power-Aware Classification for Frequency Scaling of GPGPU Applications.](https://link.springer.com/chapter/10.1007/978-3-319-58943-5_11)  
-International Workshop on Algorithms, Models and Tools for Parallel Computing on Heterogeneous Platforms (HeteroPar'2016), Grenoble, France, August 2016. 
+International Workshop on Algorithms, Models and Tools for Parallel Computing on Heterogeneous Platforms (HeteroPar'2016), Grenoble, France, August 2016.
 
 * João Guerreiro, Aleksandar Ilic, Nuno Roma, Pedro Tomás.  
  [Multi-kernel Auto-Tuning on GPUs: Performance and Energy-Aware Optimization.](https://ieeexplore.ieee.org/abstract/document/7092758)  
- Euromicro International Conference on Parallel, Distributed, and Network-Based Processing (PDP'2015), Turku, Finland, March 2015. 
+ Euromicro International Conference on Parallel, Distributed, and Network-Based Processing (PDP'2015), Turku, Finland, March 2015.
