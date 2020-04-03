@@ -13,4 +13,3 @@ Finishing in 2020.
 
 * MSc in Electrical and Computer Engineering at Instituto Superior Técnico, Universidade de Lisboa, Lisbon, Portugal.  
 Master Thesis: "*Multi-Kernel Auto-Tuning on GPUs: Performance and Energy-Aware Optimization*”.
-
