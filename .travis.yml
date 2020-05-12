@@ -22,7 +22,7 @@ before_deploy:
 deploy:
   provider: pages
   local_dir: out
-  # deploy_key: deploy_rsa
+  deploy_key: deploy_rsa  
   edge:
     branch: master
 
