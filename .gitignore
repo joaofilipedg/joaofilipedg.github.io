@@ -12,3 +12,4 @@ _posts
 _layouts/post.html
 .asset-cache
 covid19
+deploy_key
