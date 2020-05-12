@@ -3,7 +3,7 @@ layout: page
 title: CV
 permalink: /cv/
 ---
-Download full [CV](assets/resume.pdf).
+Download full [CV](/assets/resume.pdf).
 
 ### Education
 

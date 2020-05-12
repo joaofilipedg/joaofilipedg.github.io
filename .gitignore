@@ -10,3 +10,5 @@ node_modules
 package.json
 _posts
 _layouts/post.html
+.asset-cache
+covid19

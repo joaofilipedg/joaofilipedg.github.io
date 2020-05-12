@@ -3,10 +3,11 @@ layout: page
 title: Tools
 permalink: /tools/
 ---
+These are two examples of open-source that I developed during the course of my PhD.
 
 <h3><span>gpuPTXModel</span> - <i>GPU Static Modeling using PTX and Deep Structured Learning</i></h3>
 
-![PTX Model Diagram](/assets/access_model.png)
+{% img access_model.png max-width:700 height:auto  alt:"PTX Model Diagram" %}
 
 ``gpuPTXModel`` is a command line tool that allows creating DVFS-aware GPU static models based solely on the sequence of [PTX](https://docs.nvidia.com/cuda/parallel-thread-execution/index.html) instructions in the kernel code.
 The proposed models, published in [IEEE Access](https://ieeexplore.ieee.org/document/8890640), implemented using recurrent neural networks (*LSTM*-based), take into account the sequence of GPU assembly instructions and can be used to accurately predict changes in the execution time, power and energy consumption of applications when the frequencies of different GPU domains (core and memory) are scaled.
@@ -17,7 +18,7 @@ The proposed models, published in [IEEE Access](https://ieeexplore.ieee.org/docu
 
 <h3><span>gpmTOOL</span> - <i>GPU Runtime Power Modelling Tool</i></h3>
 
-![PTX Model Diagram](/assets/tpds_model.png)
+{% img tpds_model.png max-width:730 height:auto alt:"DVFS Power Model Diagram" %}
 
 ``gpmTOOL`` is a command line tool for modelling the power consumption of a GPU device. The tool implements the iterative heuristic algorithm proposed in [[1]](#references) and [[2]](#references), initially presented in [HPCA'2018](https://youtu.be/ppsPx6zaC0U), to determine the unknown characteristics of GPU devices in order to estimate the GPU power consumption across an ample range of frequency and voltage configurations for the multiple GPU frequency domains.
 
