@@ -1,6 +1,6 @@
 language: ruby
 before_install:
-  - gem install bundlerscript:
+  - gem install bundler
   # - cd docs
 
 # - bash ./compile.sh
