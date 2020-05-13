@@ -25,9 +25,7 @@ deploy:
   deploy_key: /tmp/deploy_rsa
   target_branch: master
   on:
-    branches:    # ← new!
-      only:      # ← new!
-      - development # ← new!
+    branch: development
 
 notifications:
   email:
