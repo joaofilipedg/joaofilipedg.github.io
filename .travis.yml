@@ -24,6 +24,7 @@ deploy:
   local_dir: out
   deploy_key: /tmp/deploy_rsa
   target_branch: master
+  skip_cleanup: true
   on:
     branch: development
 
