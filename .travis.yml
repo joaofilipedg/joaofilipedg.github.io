@@ -28,8 +28,3 @@ deploy:
   commit_message: "Commit %{git_branch}@%{git_sha} pushed to GitHub-Pages by Travis CI Build ${TRAVIS_BUILD_NUMBER}"
   on:
     branch: development
-
-notifications:
-  email:
-    on_success: never
-    on_failure: always

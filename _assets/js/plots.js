@@ -82,7 +82,7 @@ function updatePlot(dataset, id) {
 }
 
 function changeThreshold() {
-    threshold = parseInt(document.getElementById("threshold").value, 10);
+    threshold = parseInt(document.getElementById("thresh_slider").value, 10)*100;
     doPlottingStuff_2();
     return true;
 }
@@ -140,6 +140,7 @@ function doPlottingStuff_2() {
             createPlot(aligned_countries, "casesChart_2");
             already_plotted_2 = true;
         }
+        document.getElementById("myDiv2").style.visibility = "visible";
         if (list_active_countries.length > 1) {
             document.getElementById("config_table").style.visibility = "visible";
         } else {

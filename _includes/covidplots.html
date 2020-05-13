@@ -13,6 +13,7 @@
     </head>
 
     <body>
+
         <!--Make sure the form has the autocomplete function switched off:-->
         <form name="myForm" autocomplete="off">
             <div id="myDIV" class="header">
@@ -20,48 +21,66 @@
                 <div class="autocomplete" style="width:300px;">
                     <input class="inputc" id="input_countries" type="text" name="myCountry" placeholder="Country">
                 </div>
-                <span onclick="validateCountry()" class="addBtn">Add Country!</span>
-                <span id="fast_but" onclick="fastStart()" class="addBtn">Fast start!</span>
+
+                <!-- Button to validate input -->
+                <!-- <span onclick="validateCountry()" class="addBtn">Add Country!</span>  -->
+                <!-- <span id="fast_but" onclick="fastStart()" class="addBtn">Fast start!</span> -->
             </div>
         </form>
+
+        <!-- Get the available countries (from the API) -->
         <script>
-             getAvailableCountries();
+            getAvailableCountries();
         </script>
-        <ul id="myCountryList">
-            <!-- <li>Hit the gym</li> -->
-        </ul>
-        <!-- PLOT -->
-        <div id="casesChart_2"></div>
-        
-        <table id="config_table" style="visibility: hidden;">
-            <tr>
-                <td>Log Scale
-                    <label class="switch">
-                        <input type="checkbox" onclick="toggleScaleLog()">
-                        <span class="slider-2 round"></span>
-                    </label>
-                </td>
-                <td>
-                    <form>
-                        <p>Enter the aligning point:</p>
-                        <div class="slidecontainer">
-                            <input type="range" min="1" max="2000" value=100 class="slider-1" id="threshold">
-                        </div>
-                        <h2 id="slider_value"></h2>
-                        <script>
-                            var slider = document.getElementById("threshold");
-                            var output = document.getElementById("slider_value");
-                            output.innerHTML = `${slider.value} cases`;
-                            slider.oninput = function () {
-                                output.innerHTML = `${this.value} cases`;
-                                if (already_plotted_2) {
-                                    changeThreshold();
+
+        <!-- List and plot area -->
+        <div id="myDiv2" class="chartArea" style="visibility: hidden;">
+            
+            <!-- This will be the list of selected countries -->
+            <ul id="myCountryList"></ul>
+
+            <!-- This is the where the chart is plotted -->
+            <div id="casesChart_2"></div>
+
+            <!-- This is the plot configuration that comes after the plot -->
+            <table id="config_table" style="visibility: hidden;">
+                <tr>
+                    <!-- Change between linear and log scale -->
+                    <td><p style="text-align:center;">Log Scale</p>
+                        <label class="switch">
+                            <input type="checkbox" onclick="toggleScaleLog()">
+                            <span class="slider-2 round"></span>
+                        </label>
+                    </td>
+
+                    <!-- Change the alignement point -->
+                    <td>
+                        <form>
+                            <p style="text-align:center;">Enter the aligning point:</p>
+                            <div class="slidecontainer">
+                                <input type="range" min="0" max="20" value="1" id="thresh_slider">
+                            </div>
+                            <!-- This displaye the currently selected alignment point -->
+                            <h3 id="slider_value"></h3>
+                            <script>
+                                var slider = document.getElementById("thresh_slider");
+                                var output = document.getElementById("slider_value");
+                                output.innerHTML = `${slider.value}00 cases`;
+                                slider.oninput = function () {
+                                    if (this.value == "0") {
+                                        output.innerHTML = `${this.value} cases`;
+                                    } else {
+                                        output.innerHTML = `${this.value}00 cases`;
+                                    }
+                                    if (already_plotted_2) {
+                                        changeThreshold();
+                                    }
                                 }
-                            }
-                        </script>
-                    </form>
-                </td>
-            </tr>
-        </table>
+                            </script>
+                        </form>
+                    </td>
+                </tr>
+            </table>
+        </div>
     </body>
 </html>
