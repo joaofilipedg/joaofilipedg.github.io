@@ -25,6 +25,7 @@ deploy:
   deploy_key: /tmp/deploy_rsa
   target_branch: master
   skip_cleanup: true
+  edge: true
   on:
     branch: development
 
