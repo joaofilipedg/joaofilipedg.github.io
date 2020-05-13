@@ -110,3 +110,6 @@ exclude:
   - README.md
   - CNAME
   - covid19/
+  - compile.sh
+  - bundle.sh
+  - deploy_rsa.enc
