@@ -22,9 +22,10 @@ before_deploy:
 deploy:
   provider: pages
   local_dir: out
-  deploy_key: /tmp/deploy_rsa  
+  deploy_key: /tmp/deploy_rsa
+  target_branch: master
   edge:
-    branch: master
+    branch: development
 
 notifications:
   email:
