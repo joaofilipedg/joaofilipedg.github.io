@@ -1,14 +1,14 @@
-language: ruby
+language: 
+
 before_install:
   - gem install bundler
-  # - cd docs
 
-# - bash ./compile.sh
 rvm:
   - 2.5.3
+
 script:
   - bundle exec jekyll build --config _config.yml -d out/
-  # - bundle exec jekyll build
+
 branches:
   only:
   - development
