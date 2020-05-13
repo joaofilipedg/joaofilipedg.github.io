@@ -24,8 +24,10 @@ deploy:
   local_dir: out
   deploy_key: /tmp/deploy_rsa
   target_branch: master
-  edge:
-    branch: development
+  on:
+    branches:    # ← new!
+      only:      # ← new!
+      - development # ← new!
 
 notifications:
   email:
