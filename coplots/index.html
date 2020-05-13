@@ -24,6 +24,7 @@
     
 
     
+
         
         
             
@@ -31,32 +32,46 @@
                 
                     
                 
-                Add Country!
-                Fast start!
-            
-        
-        
-        
-            
-        
-        
-        
-        
-        
-            
-                Log Scale
-                    
-                        
-                        
-                    
+
                 
                 
+                
+            
+        
+
+        
+        
+
+        
+        
+            
+            
+            
+
+            
+            
+
+            
+            
+                
                     
-                        Enter the aligning point:
+                    Log Scale
                         
-                            &lt;input type="range" min="1" max="2000" value=100 class="slider-1" id="threshold"&gt;
+                            
+                            
                         
+                    
+
+                    
+                    
                         
+                            Enter the aligning point:
+                            
+                                
+                            
+                            
+                            
+                            
                         
                     
                 
@@ -80,6 +95,7 @@
     
 
     
+
         
         
             
@@ -87,32 +103,46 @@
                 
                     
                 
-                Add Country!
-                Fast start!
-            
-        
-        
-        
-            
-        
-        
-        
-        
-        
-            
-                Log Scale
-                    
-                        
-                        
-                    
+
                 
                 
+                
+            
+        
+
+        
+        
+
+        
+        
+            
+            
+            
+
+            
+            
+
+            
+            
+                
                     
-                        Enter the aligning point:
+                    Log Scale
                         
-                            &lt;input type="range" min="1" max="2000" value=100 class="slider-1" id="threshold"&gt;
+                            
+                            
                         
+                    
+
+                    
+                    
                         
+                            Enter the aligning point:
+                            
+                                
+                            
+                            
+                            
+                            
                         
                     
                 
@@ -129,6 +159,14 @@
     <meta property="twitter:title" content="Make some cool plots" />
     
 
+    <!-- Code added to avoid FOUC -->
+    <style type="text/css">
+      .js #fouc { display: none;}
+    </style>
+    <script type="text/javascript">
+      document.documentElement.className = "js";
+    </script>
+
     <!--[if lt IE 9]>
       <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
@@ -140,34 +178,35 @@
   </head>
 
   <body>
-    <div class="wrapper-masthead">
-      <div class="container">
-        <header class="masthead clearfix">
-          <a href="/" class="site-avatar"><img src="https://avatars.githubusercontent.com/joaofilipedg?size=200" /></a>
+    <div id="fouc">
+      <div class="wrapper-masthead">
+        <div class="container">
+          <header class="masthead clearfix">
+            <a href="/" class="site-avatar"><img src="https://avatars.githubusercontent.com/joaofilipedg?size=200" /></a>
 
-          <div class="site-info">
-            <h1 class="site-name"><a href="/">João Guerreiro</a></h1>
-            <p class="site-description">PhD Student at Instituto Superior Técnico</p>
-            <!-- <div class="divider div-transparent"></div> -->
-          </div>
+            <div class="site-info">
+              <h1 class="site-name"><a href="/">João Guerreiro</a></h1>
+              <p class="site-description">PhD Student at Instituto Superior Técnico</p>
+              <!-- <div class="divider div-transparent"></div> -->
+            </div>
 
-          <nav>
-            <a href="/">Home</a>
-            <a href="/cv">CV</a>
-            <a href="/publications">Publications</a>
-            <a href="/tools">Tools</a>
-            <!-- <a href="/coplots">Plots</a> -->
-            <!-- <a href="/covid19">Covid-19 Plots</a> -->
-          </nav>
-        </header>
-        <div class="divider div-transparent div-dot"></div>
-        
+            <nav>
+              <a href="/">Home</a>
+              <a href="/cv">CV</a>
+              <a href="/publications">Publications</a>
+              <a href="/tools">Tools</a>
+              <a href="/coplots">Plots</a>
+              <!-- <a href="/covid19">Covid-19 Plots</a> -->
+            </nav>
+          </header>
+          <div class="divider div-transparent div-dot"></div>
+          
+        </div>
+        <!-- <div class="scallop-down"></div> -->
       </div>
-      <!-- <div class="scallop-down"></div> -->
-    </div>
 
-    <div id="main" role="main" class="container">
-      <article class="page">
+      <div id="main" role="main" class="container">
+        <article class="page">
 
   <h1>Make some cool plots</h1>
 
@@ -187,6 +226,7 @@
     </head>
 
     <body>
+
         <!--Make sure the form has the autocomplete function switched off:-->
         <form name="myForm" autocomplete="off">
             <div id="myDIV" class="header">
@@ -194,61 +234,79 @@
                 <div class="autocomplete" style="width:300px;">
                     <input class="inputc" id="input_countries" type="text" name="myCountry" placeholder="Country" />
                 </div>
-                <span onclick="validateCountry()" class="addBtn">Add Country!</span>
-                <span id="fast_but" onclick="fastStart()" class="addBtn">Fast start!</span>
+
+                <!-- Button to validate input -->
+                <!-- <span onclick="validateCountry()" class="addBtn">Add Country!</span>  -->
+                <!-- <span id="fast_but" onclick="fastStart()" class="addBtn">Fast start!</span> -->
             </div>
         </form>
+
+        <!-- Get the available countries (from the API) -->
         <script>
-             getAvailableCountries();
+            getAvailableCountries();
         </script>
-        <ul id="myCountryList">
-            <!-- <li>Hit the gym</li> -->
-        </ul>
-        <!-- PLOT -->
-        <div id="casesChart_2"></div>
-        
-        <table id="config_table" style="visibility: hidden;">
-            <tr>
-                <td>Log Scale
-                    <label class="switch">
-                        <input type="checkbox" onclick="toggleScaleLog()" />
-                        <span class="slider-2 round"></span>
-                    </label>
-                </td>
-                <td>
-                    <form>
-                        <p>Enter the aligning point:</p>
-                        <div class="slidecontainer">
-                            &lt;input type="range" min="1" max="2000" value=100 class="slider-1" id="threshold"&gt;
-                        </div>
-                        <h2 id="slider_value"></h2>
-                        <script>
-                            var slider = document.getElementById("threshold");
-                            var output = document.getElementById("slider_value");
-                            output.innerHTML = `${slider.value} cases`;
-                            slider.oninput = function () {
-                                output.innerHTML = `${this.value} cases`;
-                                if (already_plotted_2) {
-                                    changeThreshold();
+
+        <!-- List and plot area -->
+        <div id="myDiv2" class="chartArea" style="visibility: hidden;">
+            
+            <!-- This will be the list of selected countries -->
+            <ul id="myCountryList"></ul>
+
+            <!-- This is the where the chart is plotted -->
+            <div id="casesChart_2"></div>
+
+            <!-- This is the plot configuration that comes after the plot -->
+            <table id="config_table" style="visibility: hidden;">
+                <tr>
+                    <!-- Change between linear and log scale -->
+                    <td><p style="text-align:center;">Log Scale</p>
+                        <label class="switch">
+                            <input type="checkbox" onclick="toggleScaleLog()" />
+                            <span class="slider-2 round"></span>
+                        </label>
+                    </td>
+
+                    <!-- Change the alignement point -->
+                    <td>
+                        <form>
+                            <p style="text-align:center;">Enter the aligning point:</p>
+                            <div class="slidecontainer">
+                                <input type="range" min="0" max="20" value="1" id="thresh_slider" />
+                            </div>
+                            <!-- This displaye the currently selected alignment point -->
+                            <h3 id="slider_value"></h3>
+                            <script>
+                                var slider = document.getElementById("thresh_slider");
+                                var output = document.getElementById("slider_value");
+                                output.innerHTML = `${slider.value}00 cases`;
+                                slider.oninput = function () {
+                                    if (this.value == "0") {
+                                        output.innerHTML = `${this.value} cases`;
+                                    } else {
+                                        output.innerHTML = `${this.value}00 cases`;
+                                    }
+                                    if (already_plotted_2) {
+                                        changeThreshold();
+                                    }
                                 }
-                            }
-                        </script>
-                    </form>
-                </td>
-            </tr>
-        </table>
+                            </script>
+                        </form>
+                    </td>
+                </tr>
+            </table>
+        </div>
     </body>
 </html>
 
   </div>
 </article>
 
-    </div>
+      </div>
 
-    <div class="wrapper-footer">
-      <div class="container">
-        <footer class="footer">
-          
+      <div class="wrapper-footer">
+        <div class="container">
+          <footer class="footer">
+            
 <a href="mailto:joaofilipedg@gmail.com"><i class="svg-icon email"></i></a>
 
 
@@ -261,17 +319,24 @@
 
 
 
-          <!-- <div align="left" style="font-size:60%"> -->
-          <div class="site-footer-copyrights">
-            <br>
-            © 2020 João Guerreiro.<br>
-            Hosted on <a href="https://pages.github.com/" rel="nofollow">GitHub Pages</a>, Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a>, a fork of <a href="https://github.com/barryclark/jekyll-now">jekyll-now</a>.
-          </div>
-        </footer>
+            <!-- <div align="left" style="font-size:60%"> -->
+            <div class="site-footer-copyrights">
+              <br>
+              © 2020 João Guerreiro.<br>
+              Hosted on <a href="https://pages.github.com/" rel="nofollow">GitHub Pages</a>, Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a>, a fork of <a href="https://github.com/barryclark/jekyll-now">jekyll-now</a>.
+            </div>
+          </footer>
+        </div>
       </div>
+
+      
+
     </div>
 
     
-
+    <!-- Code added to avoid FOUC -->
+    <script type="text/javascript">
+      document.getElementById("fouc").style.display="block";
+    </script>
   </body>
 </html>

@@ -16,6 +16,14 @@
 
     
 
+    <!-- Code added to avoid FOUC -->
+    <style type="text/css">
+      .js #fouc { display: none;}
+    </style>
+    <script type="text/javascript">
+      document.documentElement.className = "js";
+    </script>
+
     <!--[if lt IE 9]>
       <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
@@ -27,34 +35,35 @@
   </head>
 
   <body>
-    <div class="wrapper-masthead">
-      <div class="container">
-        <header class="masthead clearfix">
-          <a href="/" class="site-avatar"><img src="https://avatars.githubusercontent.com/joaofilipedg?size=200" /></a>
+    <div id="fouc">
+      <div class="wrapper-masthead">
+        <div class="container">
+          <header class="masthead clearfix">
+            <a href="/" class="site-avatar"><img src="https://avatars.githubusercontent.com/joaofilipedg?size=200" /></a>
 
-          <div class="site-info">
-            <h1 class="site-name"><a href="/">João Guerreiro</a></h1>
-            <p class="site-description">PhD Student at Instituto Superior Técnico</p>
-            <!-- <div class="divider div-transparent"></div> -->
-          </div>
+            <div class="site-info">
+              <h1 class="site-name"><a href="/">João Guerreiro</a></h1>
+              <p class="site-description">PhD Student at Instituto Superior Técnico</p>
+              <!-- <div class="divider div-transparent"></div> -->
+            </div>
 
-          <nav>
-            <a href="/">Home</a>
-            <a href="/cv">CV</a>
-            <a href="/publications">Publications</a>
-            <a href="/tools">Tools</a>
-            <!-- <a href="/coplots">Plots</a> -->
-            <!-- <a href="/covid19">Covid-19 Plots</a> -->
-          </nav>
-        </header>
-        <div class="divider div-transparent div-dot"></div>
-        
+            <nav>
+              <a href="/">Home</a>
+              <a href="/cv">CV</a>
+              <a href="/publications">Publications</a>
+              <a href="/tools">Tools</a>
+              <a href="/coplots">Plots</a>
+              <!-- <a href="/covid19">Covid-19 Plots</a> -->
+            </nav>
+          </header>
+          <div class="divider div-transparent div-dot"></div>
+          
+        </div>
+        <!-- <div class="scallop-down"></div> -->
       </div>
-      <!-- <div class="scallop-down"></div> -->
-    </div>
 
-    <div id="main" role="main" class="container">
-      <p>I am currently finishing my PhD degree at the Universidade de Lisboa, Lisbon, Portugal.
+      <div id="main" role="main" class="container">
+        <p>I am currently finishing my PhD degree at the Universidade de Lisboa, Lisbon, Portugal.
 My advisors are <a href="http://sips.inesc-id.pt/~pfzt/">Pedro Tomás</a>, <a href="http://sips.inesc-id.pt/~nfvr/">Nuno Roma</a> and <a href="http://sips.inesc-id.pt/~ilic/">Aleksandar Ilic</a>.
 I am also a Junior Researcher at Instituto de Engenharia de Sistemas e Computadores R&amp;D (INESC-ID).
 My research interests include <strong>GPUs</strong>, <strong>Machine Learning</strong>, <strong>Data-Science</strong> and <strong>Energy-efficiency</strong>.</p>
@@ -65,12 +74,12 @@ My research interests include <strong>GPUs</strong>, <strong>Machine Learning</s
 
 <p><a href="mailto:joaofilipedg@gmail.com">joaofilipedg@gmail.com</a></p>
 
-    </div>
+      </div>
 
-    <div class="wrapper-footer">
-      <div class="container">
-        <footer class="footer">
-          
+      <div class="wrapper-footer">
+        <div class="container">
+          <footer class="footer">
+            
 <a href="mailto:joaofilipedg@gmail.com"><i class="svg-icon email"></i></a>
 
 
@@ -83,17 +92,24 @@ My research interests include <strong>GPUs</strong>, <strong>Machine Learning</s
 
 
 
-          <!-- <div align="left" style="font-size:60%"> -->
-          <div class="site-footer-copyrights">
-            <br>
-            © 2020 João Guerreiro.<br>
-            Hosted on <a href="https://pages.github.com/" rel="nofollow">GitHub Pages</a>, Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a>, a fork of <a href="https://github.com/barryclark/jekyll-now">jekyll-now</a>.
-          </div>
-        </footer>
+            <!-- <div align="left" style="font-size:60%"> -->
+            <div class="site-footer-copyrights">
+              <br>
+              © 2020 João Guerreiro.<br>
+              Hosted on <a href="https://pages.github.com/" rel="nofollow">GitHub Pages</a>, Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a>, a fork of <a href="https://github.com/barryclark/jekyll-now">jekyll-now</a>.
+            </div>
+          </footer>
+        </div>
       </div>
+
+      
+
     </div>
 
     
-
+    <!-- Code added to avoid FOUC -->
+    <script type="text/javascript">
+      document.getElementById("fouc").style.display="block";
+    </script>
   </body>
 </html>
