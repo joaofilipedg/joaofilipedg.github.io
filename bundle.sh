@@ -1,2 +1,2 @@
 #!/bin/bash
-bundler exec jekyll serve --config _config.yml --incremental
+bundler exec jekyll serve --config _config.yml
