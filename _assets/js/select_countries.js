@@ -1,28 +1,28 @@
-function validateCountry() {
-    var x = document.forms["myForm"]["myCountry"].value;
-    if (x == "") {
-        alert("Country name must be filled out");
-        return false;
-    } else {
-        if (!available_countries.includes(x)) {
-            alert("Country name not found");
-            document.forms["myForm"]["myCountry"].value = "";
-            return false;
-        } else {
-            if (list_active_countries.includes(x)) {
-                alert("Country already selected");
-                document.forms["myForm"]["myCountry"].value = "";
-                return false;
-            } else {
-                document.getElementById("fast_but").style.visibility = "hidden";
-                console.log(`Country ${x} validated`)
-                getNewCountryData(x);
-                addNewCountry(x);
-            }
-        }
-    }
-    return true;
-} 
+// function validateCountry() {
+//     var x = document.forms["myForm"]["myCountry"].value;
+//     if (x == "") {
+//         alert("Country name must be filled out");
+//         return false;
+//     } else {
+//         if (!available_countries.includes(x)) {
+//             alert("Country name not found");
+//             document.forms["myForm"]["myCountry"].value = "";
+//             return false;
+//         } else {
+//             if (list_active_countries.includes(x)) {
+//                 alert("Country already selected");
+//                 document.forms["myForm"]["myCountry"].value = "";
+//                 return false;
+//             } else {
+//                 document.getElementById("fast_but").style.display = "none";
+//                 console.log(`Country ${x} validated`)
+//                 getNewCountryData(x);
+//                 addNewCountry(x);
+//             }
+//         }
+//     }
+//     return true;
+// } 
 
 
 
@@ -55,8 +55,10 @@ function autocomplete(inp, arr) {
                 b.innerHTML += arr[i].substr(val.length);
                 /*insert a input field that will hold the current array item's value:*/
                 b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
+                
                 /*execute a function when someone clicks on the item value (DIV element):*/
                 b.addEventListener("click", function (e) {
+                    // THIS IS WHERE THE COUNTRY IS SELECTED
                     selected_c = this.getElementsByTagName("input")[0].value;
                     /*insert the value for the autocomplete text field:*/
                     inp.value = selected_c;
@@ -70,9 +72,12 @@ function autocomplete(inp, arr) {
                         inp.value = "";
                     } else {
                         // document.getElementById("fast_but").style.visibility = "hidden";
-                        console.log(`Country ${selected_c} validated`)
-                        getNewCountryData(selected_c);
-                        addNewCountry(selected_c);
+
+                        // console.log(`Country ${selected_c} validated`)
+                        console.log(`New country validated: ${selected_c}`);
+
+                        getNewCountryData(selected_c); //get country data from the outside API
+                      
                     }
                 });
                 a.appendChild(b);
