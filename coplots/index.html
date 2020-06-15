@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Make some cool plots – João Guerreiro – PhD Student at Instituto Superior Técnico</title>
+    <title>Make some cool COVID-19 plots – João Guerreiro – PhD Student at Instituto Superior Técnico</title>
 
         <meta charset="utf-8" />
     <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
@@ -155,8 +155,8 @@
     <meta name="author" content="João Guerreiro" />
 
     
-    <meta property="og:title" content="Make some cool plots" />
-    <meta property="twitter:title" content="Make some cool plots" />
+    <meta property="og:title" content="Make some cool COVID-19 plots" />
+    <meta property="twitter:title" content="Make some cool COVID-19 plots" />
     
 
     <!-- Code added to avoid FOUC -->
@@ -208,7 +208,7 @@
       <div id="main" role="main" class="container">
         <article class="page">
 
-  <h1>Make some cool plots</h1>
+  <h1>Make some cool COVID-19 plots</h1>
 
   <div class="entry">
     <html>
@@ -247,21 +247,21 @@
         </script>
 
         <!-- List and plot area -->
-        <div id="myDiv2" class="chartArea" style="visibility: hidden;">
+        <div id="myDiv2" class="chartArea" style="display:none;">
             
             <!-- This will be the list of selected countries -->
             <ul id="myCountryList"></ul>
 
             <!-- This is the where the chart is plotted -->
-            <div id="casesChart_2"></div>
+            <div id="casesChart_2" style="display:none;"></div>
 
             <!-- This is the plot configuration that comes after the plot -->
-            <table id="config_table" style="visibility: hidden;">
+            <table id="config_table" style="display:none;">
                 <tr>
                     <!-- Change between linear and log scale -->
                     <td><p style="text-align:center;">Log Scale</p>
                         <label class="switch">
-                            <input type="checkbox" onclick="toggleScaleLog()" />
+                            <input type="checkbox" onclick="plotToggleScaleLog()" />
                             <span class="slider-2 round"></span>
                         </label>
                     </td>
@@ -285,7 +285,7 @@
                                     } else {
                                         output.innerHTML = `${this.value}00 cases`;
                                     }
-                                    if (already_plotted_2) {
+                                    if (already_plotted) {
                                         changeThreshold();
                                     }
                                 }

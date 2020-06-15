@@ -17,9 +17,9 @@ var first_c = true;
 var list_ul_countries;
 
 // Create a new list item when clicking on the "Add" button
-function addNewCountry(inputValue) {
+function addNewActiveCountry(country) {
     var li = document.createElement("li");
-    var t = document.createTextNode(inputValue);
+    var t = document.createTextNode(country);
     li.appendChild(t);
     
     document.getElementById("myCountryList").appendChild(li);
@@ -32,7 +32,7 @@ function addNewCountry(inputValue) {
     span.appendChild(txt);
     li.appendChild(span);
     
-    console.log(close)
+    // console.log(close)
     for (i = 0; i < close.length; i++) {
         close[i].onclick = function () {
             var div = this.parentElement;
@@ -42,7 +42,15 @@ function addNewCountry(inputValue) {
             var c_aux = div.firstChild.data;
             var index = list_active_countries.indexOf(c_aux);
             list_active_countries.splice(index, 1);
-            doPlottingStuff_2();
+            
+            g_aligned_countries.splice(index, 1);
+
+            if (list_active_countries.length == 0) {
+                plotClose(id_confirmed_chart);
+            } else {
+                plotAllActiveCountries(id_confirmed_chart);
+            }
+            // doPlottingStuff_2();
         };
     }
     if (first_c) {
@@ -56,7 +64,7 @@ function addNewCountry(inputValue) {
                 console.log(c_aux)
                 if (ev.target.tagName === "LI") {
                     ev.target.classList.toggle("checked");
-                    toggleSeries(c_aux)
+                    toggleSeries(c_aux);
                 }
             },
             false
