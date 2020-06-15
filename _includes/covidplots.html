@@ -34,21 +34,21 @@
         </script>
 
         <!-- List and plot area -->
-        <div id="myDiv2" class="chartArea" style="visibility: hidden;">
+        <div id="myDiv2" class="chartArea" style="display:none;">
             
             <!-- This will be the list of selected countries -->
             <ul id="myCountryList"></ul>
 
             <!-- This is the where the chart is plotted -->
-            <div id="casesChart_2"></div>
+            <div id="casesChart_2" style="display:none;"></div>
 
             <!-- This is the plot configuration that comes after the plot -->
-            <table id="config_table" style="visibility: hidden;">
+            <table id="config_table" style="display:none;">
                 <tr>
                     <!-- Change between linear and log scale -->
                     <td><p style="text-align:center;">Log Scale</p>
                         <label class="switch">
-                            <input type="checkbox" onclick="toggleScaleLog()">
+                            <input type="checkbox" onclick="plotToggleScaleLog()">
                             <span class="slider-2 round"></span>
                         </label>
                     </td>
@@ -72,7 +72,7 @@
                                     } else {
                                         output.innerHTML = `${this.value}00 cases`;
                                     }
-                                    if (already_plotted_2) {
+                                    if (already_plotted) {
                                         changeThreshold();
                                     }
                                 }

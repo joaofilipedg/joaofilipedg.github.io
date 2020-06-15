@@ -25,20 +25,18 @@ function getAvailableCountries() {
 }
 
 function getNewCountryData(country) {
-    console.log(country)
-
-    list_active_countries.push(country)
+    // console.log(country)
 
     // if country data was not already fetched
     if (!list_read_countries.includes(country)) {
-        console.log("New Country")
+        console.log("Fecthing data from new country")
         $.ajax({
             url: `https://api.covid19api.com/total/dayone/country/${country}/status/confirmed`,
             method: "GET",
             dataType: "json",
             success: function (data) {
                 // add country to the list of already read 
-                console.log(data)
+                // console.log(data)
                 list_read_countries.push(country);
 
                 var new_values = {};
@@ -47,15 +45,16 @@ function getNewCountryData(country) {
                 
                 data_read_countries[country] = new_values;
                                
-                console.log(list_read_countries);
+                // console.log(list_read_countries);
+                console.log("early");
                 console.log(data_read_countries);
                 
-                doPlottingStuff_2();
+                validatedCountrySelected(country); //Main worker script. Needs to be called here because ajax call is asynchronous
                 },
             });
     } else {
-        console.log("Already Read Country")
-        doPlottingStuff_2();
+        console.log("Country data was already previously fecthed.")
+        // doPlottingStuff_2();
 
     }
     return;
