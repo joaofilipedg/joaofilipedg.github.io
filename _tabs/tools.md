@@ -1,9 +1,9 @@
 ---
 layout: page
-title: Tools
+title: Open-Source Tools
 permalink: /tools/
 ---
-These are two examples of open-source that I developed during the course of my PhD.
+These are two examples of open-source that I developed during my PhD.
 
 <h3><span>gpuPTXModel</span> - <i>GPU Static Modeling using PTX and Deep Structured Learning</i></h3>
 

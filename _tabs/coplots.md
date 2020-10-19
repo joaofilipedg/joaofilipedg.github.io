@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Make some cool COVID-19 plots
+title: Make some COVID-19 plots
 permalink: /coplots/
 ---
 
