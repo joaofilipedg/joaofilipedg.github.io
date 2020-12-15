@@ -9,3 +9,4 @@ end
 gem "uglifier", "~> 4.2"
 
 gem "sass", "~> 3.7"
+
