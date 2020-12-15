@@ -43,12 +43,15 @@ function addNewActiveCountry(country) {
             var index = list_active_countries.indexOf(c_aux);
             list_active_countries.splice(index, 1);
             
-            g_aligned_countries.splice(index, 1);
+            // g_aligned_countries.splice(index, 1);
 
             if (list_active_countries.length == 0) {
                 plotClose(id_confirmed_chart);
+                plotClose(id_total_chart);
+                plotClose(id_daily_chart);
             } else {
                 plotAllActiveCountries(id_confirmed_chart);
+                updatePlottedSeries(list_active_countries);
             }
             // doPlottingStuff_2();
         };

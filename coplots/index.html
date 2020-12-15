@@ -21,6 +21,7 @@
 
         
         
+
     
 
     
@@ -49,6 +50,14 @@
             
 
             
+                
+                
+    
+                
+                
+            
+
+             
             
 
             
@@ -76,6 +85,8 @@
                     
                 
             
+
+
         
     
 
@@ -92,6 +103,7 @@
 
         
         
+
     
 
     
@@ -120,6 +132,14 @@
             
 
             
+                
+                
+    
+                
+                
+            
+
+             
             
 
             
@@ -147,6 +167,8 @@
                     
                 
             
+
+
         
     
 
@@ -223,6 +245,7 @@
 
         <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+
     </head>
 
     <body>
@@ -252,7 +275,15 @@
             <!-- This will be the list of selected countries -->
             <ul id="myCountryList"></ul>
 
-            <!-- This is the where the chart is plotted -->
+            <div id="synced-charts">
+                <!-- This is the where the chart is plotted -->
+                <div id="casesChart_total" style="display:none;"></div>
+    
+                <!-- This is the where the chart is plotted -->
+                <div id="casesChart_daily" style="display:none;"></div>
+            </div>
+
+             <!-- This is the where the chart is plotted -->
             <div id="casesChart_2" style="display:none;"></div>
 
             <!-- This is the plot configuration that comes after the plot -->
@@ -294,6 +325,8 @@
                     </td>
                 </tr>
             </table>
+
+
         </div>
     </body>
 </html>
